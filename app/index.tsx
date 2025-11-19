@@ -1,15 +1,10 @@
-import { Text, View } from "react-native";
+import { useState } from "react";
+import Splash from "./src/screens/Splash";
 
-export default function Index() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Here i am going to develop my app</Text>
-    </View>
-  );
+export default function App() {
+  const [showSplash, setShowPlash] = useState(true);
+
+  if(showSplash){
+    return <Splash onFinish={() => setShowPlash(false)} />
+  }
 }
